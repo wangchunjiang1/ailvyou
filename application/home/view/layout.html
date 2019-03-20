@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>爱旅游后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="/static/css/home/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/home/style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/home/font-awesome.min.css">
+<link rel="apple-touch-icon-precomposed" href="/static/img/home/icon/icon.png">
+<link rel="shortcut icon" href="/static/img/home/icon/favicon.ico">
+<script src="/static/js/home/jquery-2.1.4.min.js"></script>
+</head>
+
+<body class="user-select">
+<section class="container-fluid">
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">切换导航</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="/">爱旅游</a> </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown"> 
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户：{$Think.session.loginedUser}</a>
+            </li>
+            <li><a href="/home/index/logout" onClick="if(!confirm('是否确认退出？'))return false;">退出登录</a></li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="row">
+      <aside class="col-sm-3 col-md-2 col-lg-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="/home/index">首页</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="/home/spot">景点管理</a></li>
+          <li><a href="/home/money">旅游信息管理</a></li>
+          <li><a href="/home/blog">用户评论管理</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="/home/adress">起始地区</a></li>
+          <li><a class="dropdown-toggle" href="/home/order">订单管理</a>
+          </li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="/home/user">客户管理</a></li>
+          <li><a href="/home/advice">用户意见管理</a></li>
+          <li><a class="dropdown-toggle" id="settingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+          </li>
+        </ul>
+      </aside>
+  {__CONTENT__}
+     
+    </div>
+  </div>
+</section>
+
+<script src="/static/js/home/bootstrap.min.js"></script> 
+<script src="/static/js/home/admin-scripts.js"></script>
+<script src="/static/lib/ueditor/ueditor.config.js"></script> 
+<script src="/static/lib/ueditor/ueditor.all.min.js"> </script> 
+<script src="/static/lib/ueditor/lang/zh-cn/zh-cn.js"></script>  
+</body>
+</html>

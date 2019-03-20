@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/favicon.ico">
+
+    <title>爱旅游网站</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/static/css/simple-line-icons.css" rel="stylesheet">
+    <link href="/static/css/zhuce/tou.css" rel="stylesheet">
+    <link href="/static/css/themify-icons.css" rel="stylesheet">
+    <link href="/static/css/owl.carousel.css" rel="stylesheet">
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link href="/static/css/viewbox.css" rel="stylesheet"> 
+    <link href="/static/css/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <script src="/static/js/fontawesome-all.min.js"></script>
+
+    <link href="/static/css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- pageloader -->
+    <div id="loader">
+      <div class="loader">
+        <div class="sk-child sk-dot1"></div>
+        <div class="sk-child sk-dot2"></div>
+      </div>
+    </div>
+    <!-- / #pageloader -->
+
+    <nav id="contact-menu" class="navigation navigation-hidden navigation-portrait">
+      <div class="nav-menus-wrapper">
+        <div class="header-info-item clearfix">
+          <p class="header-info-title">联系我们</p>
+          <ul>
+            <li><span class="ti-map-alt"></span> shijiazhuang</li>
+            <li><span class="ti-headphone-alt"></span> <a href="tel:1233-6666-666">1233-6666-666</a></li>
+            <li><span class="ti-mobile"></span> <a href="tel:1233-6666-666">1233-6666-666</a></li>
+            <li><span class="ti-email"></span> <a href="mailto:ailvyou@163.com">ailvyou@163.com</a></li>
+          </ul>
+        </div>
+        <div class="header-info-item clearfix">
+          <p class="header-info-title">工作时间</p>
+          <ul>
+            <li><span class="ti-alarm-clock"></span>工作日上午九点到晚上九点</li>
+            <li><span class="ti-alarm-clock"></span>周六上午十点到晚上八点</li>
+            <li><span class="ti-alarm-clock"></span>周日休息</li>
+            <li><a href="/home">后台系统</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <header>
+      
+      <div class="main-header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-5 col-4">
+              <div class="main-header-logo">
+                <a href="/"><img width="130" src="/static/img/logo-white.png" alt="Site logo"></a>
+              </div>
+            </div>
+            <div class="col-md-7 col-8">
+              <div class="clearfix float-right contact-head">
+                <a href="tel:1800-2345-5677">1233-6666-666</a>
+                <button class="btn-show navbar-toggler float-right btn-contact"><span class="ti-menu"></span></button>
+              </div>
+              <nav id="navigation" class="navigation mt-10">
+                <div class="nav-toggle">Menu</div>
+               
+
+                <div class="nav-menus-wrapper">
+
+                  <ul class="nav-menu align-to-right">
+                    <li><a class="active" href="/">首页</a></li>
+                    <li><a href="/index/tour">目的地</a></li>
+                    <li><a href="/index/tourad">旅游景点</a></li>
+                    <li><a href="/index/blog">用户评论</a></li>
+                    <li><a href="/index/index/contact">联系我们</a></li>
+
+                    {empty name="$Think.session.loginedUsers"}
+                    <li><a href="/index/index/login">登录</a></li>
+                    <li><a href="/index/index/register">注册</a></li>
+                    {else/}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            {$Think.session.loginedUsers}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="nav-dropdown">
+                            <li><a href="/index/tour/userorder">我的订单</a></li>
+                            <li><a href="/index/blog/userblog">我的评论</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/index/index/logout">注销</a></li>
+                        </ul>
+                    </li>
+                   {/empty}
+
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </header>
+
+    <!-- / header -->
+
+  
+      
+      <!-- slider -->
+       <div class="owl-carousel" id="fullscreen-slider">
+        <div class="item height100vh" style="background-image: url(/static/img/changcheng.jpg);">
+          <div class="page-head-wrap">
+            <div class="page-head-inner">
+              <div class="page-head-caption container text-right">
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <p class="animate" data-animation="fadeInLeft" data-timeout="800">万里长城，是中国古代的军事防御工程，是一道高大、坚固而连绵不断的长垣，用以限隔敌骑的行动。</p>
+                    <h2 class="big-title mb-10 animate" data-animation="fadeInRight" data-timeout="800">长城</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item height100vh" style="background-image: url(/static/img/dibai2.jpg);">
+          <div class="page-head-wrap">
+            <div class="page-head-inner">
+              <div class="page-head-caption container text-center">
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <p class="animate" data-animation="bounceIn" data-timeout="900">世界第一高楼与人工构造物</p>
+                    <h2 class="big-title mb-10 animate" data-animation="fadeInDown" data-timeout="800">哈利法塔</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item height100vh" style="background-image: url(/static/img/aifeier.jpeg);">
+          <div class="page-head-wrap">
+            <div class="page-head-inner">
+              <div class="page-head-caption container text-left">
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <h2 class="big-title mb-10 animate" data-animation="fadeInUp" data-timeout="800">埃菲尔铁塔</h2>
+                    <p class="animate mb-20" data-animation="fadeInLeft" data-timeout="800">埃菲尔铁塔是世界著名建筑、法国文化象征之一、巴黎城市地标之一、巴黎最高建筑物。被法国人爱称为“铁娘子” 。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- / slider -->
+      {__CONTENT__}
+      <footer class="dark-footer"  style="background-image: url(/static/img/image-20.jpg);">
+        <div class="main-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="footer-item">
+                  <img width="110" src="/static/img/logo-white.png" alt="Logo">
+                  <div class="mt-20 mb-20">
+                    <button type="button" class="btn btn-1 btn-sm" data-toggle="modal" data-target="#newsletterModal">
+                      ailvyou wangzhan
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade bd-example-modal-sm" id="newsletterModal" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">ailvyou site</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                  </div>
+                
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="footer-item">
+                  <ul class="footer-menu">
+                      <li><a class="active" href="/">首页</a></li>
+                      <li><a href="/index/tour">目的地</a></li>
+                      <li><a href="/index/tourad">旅游景点</a></li>
+                      <li><a href="/index/blog">用户评论</a></li>
+                      <li><a href="/index/index/contact">联系我们</a></li>
+                  </ul>
+                  <p class="mt-30">爱旅游网站致力于服务于大众旅游，给用户带来非常好的旅游体验！！</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="footer-item">
+                  <ul class="mb-20">
+                    <li>1233-6666-666</li>
+                    <li class="mt-10"><a href="mailto:">ailvyou@163.com</a></li>
+                    <li class="mt-10">shijiazhuang</li>
+                  </ul>
+                  
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <p>@ 2019 <a href="/">ailvyou</a></p>
+              </div>
+              <div class="col-md-6 text-r mobile-left">
+                <p><img width="200" src="/static/img/visa-mastercard-paypal.png" alt="Visa Mastercard Paypal"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+      <!-- SCROLL UP -->
+      <a class="scrollup">
+        <i class="icon-arrow-up icons"></i>
+      </a>
+      <!-- / SCROLL UP -->
+  
+  
+      <!-- JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/moment.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/bootstrap-slider.min.js"></script>
+      <script src="/static/js/bootstrap-datetimepicker.min.js"></script> 
+      <script src="/static/js/owl.carousel.min.js"></script>
+      <script src="/static/js/navigation.js"></script>
+      <script src="/static/js/modernizr.js"></script>
+      <script src="/static/js/jqueryvalidation.js"></script>
+      <script src="/static/js/jquery.viewbox.min.js"></script> 
+      <script src="/static/js/masonry.min.js"></script> 
+      <script src="/static/js/imagesloaded.js"></script>
+      <script src="/static/js/jquery.waypoints.min.js"></script>
+      <script src="/static/js/jquery.sticky-kit.min.js"></script>
+   
+      <script src="/static/js/main.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,101 @@
+   <!-- content -->
+    
+   <div class="content mt-60 mb-40 container">
+        
+    <div class="row">
+      <div class="col-md-8">
+         <form action="/index/blog/save" method="post"  enctype="multipart/form-data">
+            <h1 class="page-header">新的评论</h1>
+            
+            <div class="add-article-box">
+                    <h2 class="add-article-box-title"><span>题目</span></h2>
+                    <div class="add-article-box-content">
+                        <input type="text" class="form-control"  name="title" autocomplete="off">
+                    </div>
+                  </div>
+                  <div class="add-article-box">
+                    <h2 class="add-article-box-title"><span>景点</span></h2>
+                    <div class="add-article-box-content">
+                            <input type="text" class="form-control" name="spot" autocomplete="off">
+                    </div>
+                  </div>
+                  <div class="add-article-box">
+                        <h2 class="add-article-box-title"><span>内容</span></h2>
+                        <div class="add-article-box-content">
+                            <textarea   name="content"  style="height:200px;width:750px;"></textarea>
+                        </div>
+                </div>
+                <div class="add-article-box">
+                        <div class="add-article-box-content">
+                                <a href="javascript:;" class="file">上传图片
+                                        <input type="file" name="bphoto1" id="">
+                                </a>                                    
+                        </div>
+                </div>
+
+                    <div class="add-article-box">
+                            <input type="button" name="Submit" value="返回" onclick="javascript:window.history.back();"/>
+                            <button  type="submit" name="submit">发布</button>
+                    </div>
+                          
+                   
+        </form>
+      </div>
+      
+
+
+
+
+
+      
+      <div class="col-md-4">
+        <div class="sidebar">
+          <div class="sidebar-item mb-40">
+            <p class="sidebar-title">最新的评论</p>
+            {volist name="blogss" id="value"}
+              {volist name="users" id="va"}
+              {eq name="$value.uid" value="$va.Id"}
+            <div class="sidebar-post-inner mb-10">
+              
+              <div class="sidebar-post-content">
+                <h6><a href="/index/blog/luserblog/id/{$value.Id}">{$value.title}</a></h6>
+                <span>{$value.create_time}</span>
+              </div>
+              <div class="sidebar-post-img">
+                By    {$va.username}
+                </div>
+                
+            </div>
+            {/eq}
+                {/volist}
+                {/volist}
+
+
+          </div>
+
+          <div class="sidebar-item mb-40">
+            <p class="sidebar-title">标签</p>
+            <ul class="tags mt-20">
+              <li><a href="#">照片</a></li>
+              <li><a href="#">旅游</a></li>
+              <li><a href="#">文化旅游‎</a></li>
+              <li><a href="#">时尚旅游</a></li>
+              <li><a href="#">完美旅游</a></li>
+              <li><a href="#">爱旅游</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-item mb-40">
+            <a href="#"><img src="/static/img/blog-2.jpg" alt=""></a>
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+    
+  </div>
+
+  <!-- / content -->

@@ -1,0 +1,77 @@
+   <!-- content -->
+    
+   <div class="content mt-60 mb-40 container">
+ 
+        <div class="row">
+          <div class="col-md-8">
+              <form action="/index/tour/sub" class="filter-form" method="POST">
+              {volist name="spots" id="val"}
+              {volist name="adress" id="vo"}
+              {eq name="$money.sid" value="$val.Id"}
+                {eq name="$money.aid" value="$vo.Id"}
+            <div class="blog-item effect-2 mb-60">
+              <a class="image-link">
+                <div class="blog-item-img">
+                    <h1>订单详情：</h1>
+                        <h3>旅程：{$vo.adress}->{$val.title}</h3>
+                        <p style="text-align:center;"></p>
+                      <div><img src="/static/{$val.photo1}" height="380px"></div>
+                      <p style="line-height: 30px; ">旅程时间：{$money.ftime}到{$money.endtime}</p>
+                      <p>人数：{$money.people}</p>
+                      <p>总价钱：{$money.money}</p>
+                      <p>请先交付预定金：300元</p>
+                </div>
+              </a>
+              <input type="hidden" name="mid" value="{$money.Id}">
+              <input type="button" name="Submit" value="返回" onclick="javascript:window.history.back();"/>
+                            {empty name="$Think.session.loginedUsers"}
+                            <button  type="submit" name="submit" onclick="javascript:alert('请先登录！');window.history.go(-1);">预定</button>
+                            {else/}
+                            <button  type="submit" name="submit" onclick="javascript:alert('你确定预定吗？')">预定</button>
+                            {/empty}
+              {/eq}
+              {/eq}
+               {/volist}
+               {/volist}
+               </form>
+            </div>
+           
+
+          </div>
+    
+          <div class="col-md-4">
+            <div class="sidebar">
+    
+    
+              </div>
+    
+              <div class="sidebar-item mb-40">
+                <p class="sidebar-title">标签</p>
+                <ul class="tags mt-20">
+                  <li><a href="#">照片</a></li>
+                  <li><a href="#">旅游</a></li>
+                  <li><a href="#">文化旅游‎</a></li>
+                  <li><a href="#">时尚旅游</a></li>
+                  <li><a href="#">完美旅游</a></li>
+                  <li><a href="#">爱旅游</a></li>
+                </ul>
+              </div>
+    
+              <div class="sidebar-item mb-40">
+                    <p class="sidebar-title">祝你旅程愉快</p>
+                    <a href="#"><img src="/static/img/blog-2.jpg" alt=""></a>
+                    <p class="sidebar-title">如果在预定过程中有疑问，请联系我们：</p>
+                    <p>电话：1233-6666-666</p>
+                    <p>邮箱：mailto:ailvyou@163.com</p>
+              </div>
+    
+    
+            </div>
+          </div>
+    
+    
+        </div>
+        
+      </div>
+    
+      <!-- / content -->

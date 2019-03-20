@@ -1,0 +1,72 @@
+   <!-- content -->
+    
+   <div class="content mt-60 mb-40 container">
+ 
+        <div class="row">
+          <div class="col-md-8">
+              
+            <div class="blog-item effect-2 mb-60">
+              <a class="image-link" href="#">
+                <div class="blog-item-img">
+                        <h1 style="text-align:center;">{$spot.title}</h1>
+                        <p style="text-align:center;">{$spot.introduction}</p>
+                      <div><img src="/static/{$spot.photo1}" height="380px"></div>
+                      <p style="line-height: 30px; text-indent: 60px;">{$spot.content}</p>
+                </div>
+              </a>
+               
+            </div>
+           
+
+          </div>
+    
+          <div class="col-md-4">
+            <div class="sidebar">
+    
+              <div class="sidebar-item mb-40">
+                <p class="sidebar-title">著名景点</p>
+               
+                <div class="sidebar-post-inner mb-10">
+                  
+                  <div class="sidebar-post-content">
+                        {volist name="spots" id="val"}
+                    <h6><a href="/index/tourad/view/id/{$val.Id}">{$val.title}</a></h6>
+                    <span>{$val.introduction}</span>
+                    {/volist}
+                  </div>
+                    
+                </div>
+    
+    
+              </div>
+    
+              <div class="sidebar-item mb-40">
+                <p class="sidebar-title">标签</p>
+                <ul class="tags mt-20">
+                  <li><a href="#">照片</a></li>
+                  <li><a href="#">旅游</a></li>
+                  <li><a href="#">文化旅游‎</a></li>
+                  <li><a href="#">时尚旅游</a></li>
+                  <li><a href="#">完美旅游</a></li>
+                  <li><a href="#">爱旅游</a></li>
+                </ul>
+              </div>
+    
+              <div class="sidebar-item mb-40">
+                    <p class="sidebar-title">其他{$spot.title}图片</p>
+                    <img src="/static/{$spot.photo2}" alt="" height="200px">
+                    <img src="/static/{$spot.photo3}" alt="" height="200px">
+                    <img src="/static/{$spot.photo4}" alt="" height="200px">
+                    <img src="/static/{$spot.photo5}" alt="" height="200px">
+              </div>
+    
+    
+            </div>
+          </div>
+    
+    
+        </div>
+        
+      </div>
+    
+      <!-- / content -->

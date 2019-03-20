@@ -1,0 +1,85 @@
+  <!-- content -->
+    
+  <div class="content mb-40 container">
+        <div class="row">
+    
+          <div class="col-md-12 mt-40 mb-40">
+            <!-- filter horizontal form -->
+            <form class="filter-form" method="POST" action="/index/tour/search">
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label class="col-form-label">起始地</label>
+                  <select class="form-control custom-select" name="aid">
+                    <option value="">--请选择--</option>
+                        {volist name="adress" id="vo"}
+                        <option value="{$vo.Id}">{$vo.adress}</option>
+                        {/volist}
+                  </select>
+                </div>
+                
+                <div class="form-group col-md-2">
+                  <label class="col-form-label">目的地</label>
+                  <select class="form-control custom-select" name="sid">
+                      <option value="">--请选择--</option>
+                    {volist name="spots" id="val"}
+                        <option value="{$val.Id}">{$val.title}</option>
+                        {/volist}
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label class="col-form-label">计划启程日期</label>
+                  <input type="text" class="form-control"  placeholder="0000-00-00" name="ftime">
+                </div>
+                <div class="form-group col-md-2">
+                  <label class="col-form-label">人数</label>
+                    <input type="text" class="form-control" name="people">
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <button type="submit" name="search_btn" class="btn btn-1 mt-26 width100">搜索</button>
+                </div>
+                
+              </div>
+            
+            </form>
+            <!-- / filter horizontal form -->
+          </div>
+          {volist name="money" id="vo"}
+          {volist name="spots" id="val"}
+          {volist name="adress" id="vd"}
+          {eq name="$vo.sid" value="$val.Id"}
+          {eq name="$vo.aid" value="$vd.Id"}
+          <div class="col-md-6 col-lg-3">
+            <div class="tour-item">
+              <a href="/index/tour/order/id/{$vo.Id}">
+                <div class="img-wrap">
+                  <img src="/static/{$val.photo1}" alt="">
+                  <p class="price">{$vo.money}</p>
+                </div>
+              </a>
+              <div class="caption">
+                <a><p class="title">{$vd.adress}->{$val.title}</p></a>
+                <p class="date"><span class="ti-calendar"></span>{$vo.ftime}到{$vo.endtime}</p>
+                <p class="time">{$vo.people}人</p>
+              </div>
+            </div>
+          </div>
+          {/eq}
+          {/eq}
+          {/volist}
+          {/volist}
+          {/volist}
+          
+    
+          <div class="col-md-12">
+            <div class="pagination pagenav">
+              <ul>
+                  {$spots->render()}
+              </ul>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    
+      <!-- / content -->

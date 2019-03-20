@@ -1,0 +1,71 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-10 col-md-offset-2 main" id="main">
+        <div class="row">
+          <form action="/home/money/update/id/{$money.Id}" method="post" class="add-article-form" enctype="multipart/form-data">
+            <div class="col-md-9">
+              <h1 class="page-header">增加旅游管理信息</h1>
+              <div class="form-group">
+                  <h2 class="add-article-box-title"><span>景点名称</span></h2>
+                <label for="article-title" class="sr-only">景点名称</label>
+                <select name="sid">
+                        <option value="">--请选择--</option>
+                        {volist name="spots" id="vo"}
+                        {eq name="money.sid" value="$vo.Id"}
+                        <option value="{$vo.Id}" selected="selected">{$vo.title}</option>
+                        {else/}
+                        <option value="{$vo.Id}">
+                        {/eq}
+                        {$vo.title}
+                        {/volist}
+                </select>
+              </div>
+              <div class="add-article-box">
+                <h2 class="add-article-box-title"><span>启程时间</span></h2>
+                <div class="add-article-box-content">
+                    <input type="text" class="form-control"  name="ftime"  value="{$money.ftime}">
+                </div>
+              </div>
+              <div class="add-article-box">
+                <h2 class="add-article-box-title"><span>结束时间</span></h2>
+                <div class="add-article-box-content">
+                        <input type="text" class="form-control"  name="endtime"  value="{$money.endtime}">
+                </div>
+              </div>
+              <div class="add-article-box">
+                    <h2 class="add-article-box-title"><span>旅行人数</span></h2>
+                    <div class="add-article-box-content">
+                            <input type="text" class="form-control"  name="people"  value="{$money.people}">
+                    </div>
+                  </div>
+            </div>
+           
+    
+            <div class="col-md-3">
+                <h1 class="page-header">操作</h1>
+
+                <div class="add-article-box">
+                        <h2 class="add-article-box-title"><span>旅游费用</span></h2>
+                        <input type="text" class="form-control"  name="money" autocomplete="off" value="{$money.money}">
+                </div>
+                
+                <div class="add-article-box">
+                  <h2 class="add-article-box-title"><span>发布</span></h2>
+                  <div class="add-article-box-content">
+                      <p><label>状态：</label><span class="article-status-display">未发布</span></p>
+                    <p><label>公开度：</label>公开</p>
+                  </div>
+                  <div class="add-article-box-footer">
+                    <button class="btn btn-primary" type="submit" name="submit">发布</button>
+                  </div>
+                </div>
+    
+             
+    
+    
+            
+    
+            </div>
+          </form>
+        </div>
+      </div>
+    
+     

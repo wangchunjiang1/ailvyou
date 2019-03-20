@@ -1,0 +1,149 @@
+﻿
+
+    </div> <!-- / search-relative -->
+
+    <!-- 目的地 -->
+
+    <div class="main-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center block width100 mb-50 block-title">
+              <h2>目的地</h2>
+              <div class="separator"><span>选择合适的景点</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            {volist name="money" id="vo"}
+            {volist name="spots" id="val"}
+            {volist name="adress" id="vd"}
+            {if condition="$val.Id lt 7"}
+            {eq name="$vo.sid" value="$val.Id"}
+            {eq name="$vo.sid" value="$vd.Id"}
+          <div class="col-md-6 col-lg-4">
+              
+            <div class="tour-item">
+              <a href="/index/tour/order/id/{$vo.Id}">
+                <div class="img-wrap">
+                  <img src="/static/{$val.photo1}">
+                  <p class="price">{$vo.money}</p>
+                </div>
+              </a>
+              <div class="caption">
+                <a href="#"><p class="title">{$vd.adress}->{$val.title}</p></a>
+                <p class="date"><span class="ti-calendar"></span>{$vo.ftime}到{$vo.endtime}</p>
+                <p class="time">{$vo.people}人</p>
+              </div>
+            </div>
+            
+          </div>
+          {/eq}
+          {/eq}
+          {/if}
+          {/volist}
+            {/volist}
+            {/volist}
+        </div>
+      </div>  
+    </div>
+
+    <!--  -->
+
+    <div class="ctoa blend-bg text-center parallax-container color-white" style="background-image: url('/static/img/image-7.jpg')">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h2 class="mb-20">来一场说走就走的旅行吧☺</h2>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 著名景点  -->
+
+    <div class="main-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center block width100 mb-50 block-title">
+              <h2>著名景点</h2>
+              <div class="separator"><span>被查看最多的旅游景点</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {volist name="spots" id="val"}
+          {if condition="$val.Id lt 7"}
+          <div class="col-md-6 col-lg-4">
+            <div class="category-item effect-1">
+              <img src="/static/{$val.photo1}" alt="img12" height="300">
+              <div class="caption">
+                <div>
+                  <p class="title">{$val.title}</p>
+                  <p class="description">{$val.introduction}</p>
+                </div>
+                <a href="/index/tourad/view/id/{$val.Id}">View more</a>
+              </div>     
+            </div>
+          </div>
+          {/if}
+          {/volist}
+        </div>
+      </div>
+    </div>
+    <!-- 用户评论 -->
+
+    <div class="main-block">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center block width100 mb-50 block-title">
+              <h2>用户评论</h2>
+              <div class="separator"><span>这有用户优秀的评论</span></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+            {volist name="blogs" id="vc"}
+            {volist name="user" id="vb"}
+            {eq name="$vc.uid" value="$vb.Id"}
+            {if condition="$vc.Id lt 4"}
+          <div class="col-md-6 col-lg-4">
+            <div class="blog-item effect-1">
+              <a class="block" href="/index/blog/luserblog/id/{$vc.Id}">
+                  
+                <img src="/static/{$vc.bphoto1}" alt="img12">
+              </a>
+              <div class="caption clearfix">
+                  
+                <a href="#">
+                  <p class="title">{$vc.title}</p>
+                </a>
+                <p class="date"><span class="ti-calendar"></span>{$vc.create_time}</p>
+                <p class="author"><span class="ti-user"></span>By {$vb.username}</p>
+                <ul class="tags">
+                  <li><a href="#">Photos</a></li>
+                  <li><a href="#">Trip</a></li>
+                  <li><a href="#">Happy</a></li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+          {/if}
+          {/eq}
+          {/volist}
+          {/volist}
+          
+
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- BLOCK / news -->
+
+

@@ -1,0 +1,24 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-10 col-md-offset-2 main" id="main">
+
+        <div class="row">
+        <div class="col-md-9">
+    <h1 class="page-header">用户评论</h1>
+    
+    {volist name="users" id="val"}
+    {eq name="$blogs.uid" value="$val.Id"}
+    <div><h3>题目：</h3>{$val.title}</div>
+    <div><h3>用户：</h3>{$val.username}</div>
+    <div><h3>图片：</h3><img/></div>
+    <div><h3>评论：</h3><p>{$blogs.content}</p></div>
+    {/eq}
+    {/volist}
+    </div>
+</div>
+<div class="add-article-box-footer">
+        <button class="btn btn-primary" type="submit" name="submit"><a href="/home/blog">返回</a></button>
+      </div>
+   
+
+
+
+</div>

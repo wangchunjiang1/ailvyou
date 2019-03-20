@@ -1,0 +1,93 @@
+   <!-- content -->
+    
+   <div class="content mt-60 mb-40 container">
+ 
+        <div class="row">
+          <div class="col-md-8">
+              {volist name="blogs" id="vc"}
+              {volist name="users" id="vb"}
+              {eq name="$vc.uid" value="$vb.Id"}
+            <div class="blog-item effect-2 mb-60">
+              <a class="image-link" href="#">
+                <div class="blog-item-img">
+                  <img src="/static/{$vc.bphoto1}" alt="Blog 1" height="400">
+                  <span class="blog-item-date">{$vc.create_time}</span>
+                  <span class="blog-item-author">By {$vb.username}</span>
+                </div>
+              </a>
+               <div class="caption">
+                <h2><a href="#">{$vc.title}</a></h2>
+                <ul class="tags">
+                  <li><a href="#">Photos</a></li>
+                  <li><a href="#">Trip</a></li>
+                  <li><a href="#">Happy</a></li>
+                </ul>
+                <p>{$vc.content}</p>
+                <a class="btn btn-4" href="#">Read more</a>
+               </div>
+            </div>
+            {/eq}
+            {/volist}
+            {/volist}
+    
+            <div class="pagination pagenav">
+              <ul>
+                {$blogs->render()}
+              </ul>
+            </div>
+          </div>
+    
+          <div class="col-md-4">
+            <div class="sidebar">
+    
+  
+    
+              <div class="sidebar-item mb-40">
+                <p class="sidebar-title">最新的评论</p>
+                {volist name="blogss" id="value"}
+                  {volist name="users" id="va"}
+                  {eq name="$value.uid" value="$va.Id"}
+                <div class="sidebar-post-inner mb-10">
+                  
+                  <div class="sidebar-post-content">
+                    <h6><a href="/index/blog/luserblog/id/{$value.Id}">{$value.title}</a></h6>
+                    <span>{$value.create_time}</span>
+                  </div>
+                  <div class="sidebar-post-img">
+                    By    {$va.username}
+                    </div>
+                    
+                </div>
+                {/eq}
+                    {/volist}
+                    {/volist}
+    
+    
+              </div>
+    
+              <div class="sidebar-item mb-40">
+                <p class="sidebar-title">标签</p>
+                <ul class="tags mt-20">
+                  <li><a href="#">照片</a></li>
+                  <li><a href="#">旅游</a></li>
+                  <li><a href="#">文化旅游‎</a></li>
+                  <li><a href="#">时尚旅游</a></li>
+                  <li><a href="#">完美旅游</a></li>
+                  <li><a href="#">爱旅游</a></li>
+                </ul>
+              </div>
+    
+              <div class="sidebar-item mb-40">
+                <a href="#"><img src="/static/img/blog-2.jpg" alt=""></a>
+              </div>
+    
+    
+            </div>
+          </div>
+    
+    
+        </div>
+        
+      </div>
+    
+      <!-- / content -->

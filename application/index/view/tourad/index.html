@@ -1,0 +1,30 @@
+   <!-- content -->
+    
+   <div class="content mt-60 mb-40 container">
+        <div class="row">
+          {volist name="spots" id="val"}
+          <div class="col-md-6 col-lg-4">
+              <div class="category-item effect-1">
+                <img src="/static/{$val.photo1}" alt="img12" height="300">
+                <div class="caption">
+                  <div>
+                    <p class="title">{$val.title}</p>
+                    <p class="description">{$val.introduction}</p>
+                  </div>
+                  <a href="/index/tourad/view/id/{$val.Id}">View more</a>
+                </div>     
+              </div>
+            </div>
+            {/volist}
+            <div class="col-md-12">
+              <div class="pagination pagenav">
+                <ul>
+                    {$spots->render()}
+                </ul>
+              </div>
+            </div>
+    
+        </div>
+      </div>
+    
+      <!-- / content -->

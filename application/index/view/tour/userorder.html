@@ -1,0 +1,67 @@
+   <!-- content -->
+    
+   <div class="content mt-60 mb-40 container">
+    
+        <div class="row">
+          <div class="col-md-8">
+            {volist name="order" id="vf"}
+                {volist name="spots" id="val"}
+                {volist name="adress" id="vo"}
+                {volist name="money" id="vs"}
+                {eq name="$vf.mid" value="$vs.Id"}
+                {eq name="$vs.sid" value="$val.Id"}
+                  {eq name="$vs.aid" value="$vo.Id"}
+            <div class="blog-item effect-2 mb-60">
+              <a class="image-link" href="#">
+                <div class="blog-item-img">
+                  <img src="/static/{$val.photo1}" alt="Blog 1" height="400">
+                  <span class="blog-item-author">{$vs.money}</span>
+                </div>
+              </a>
+               <div class="caption">
+                    <a><p class="title">{$vo.adress}->{$val.title}</p></a>
+                    <p class="date"><span class="ti-calendar"></span>{$vs.ftime}到{$vs.endtime}</p>
+                    <p class="time">{$vs.people}人</p>
+                    <p><h3>已预订</h3></p>
+                    <a href="/index/tour/delete/id/{$vf.Id}" onclick="javascript:alert('确定取消订单吗？');">取消订单</a>
+               </div>
+            </div>
+            {/eq}
+            {/eq}
+            {/eq}
+            {/volist}
+            {/volist}
+            {/volist}
+            {/volist}
+    
+          </div>
+    
+          <div class="col-md-4">
+            <div class="sidebar">
+              
+              <div class="sidebar-item mb-40">
+                <p class="sidebar-title">标签</p>
+                <ul class="tags mt-20">
+                  <li><a href="#">照片</a></li>
+                  <li><a href="#">旅游</a></li>
+                  <li><a href="#">文化旅游‎</a></li>
+                  <li><a href="#">时尚旅游</a></li>
+                  <li><a href="#">完美旅游</a></li>
+                  <li><a href="#">爱旅游</a></li>
+                </ul>
+              </div>
+    
+              <div class="sidebar-item mb-40">
+                <a href="#"><img src="/static/img/blog-2.jpg" alt=""></a>
+              </div>
+    
+    
+            </div>
+          </div>
+    
+    
+        </div>
+        
+      </div>
+    
+      <!-- / content -->

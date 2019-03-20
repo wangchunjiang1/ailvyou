@@ -1,0 +1,60 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-10 col-md-offset-2 main" id="main">
+        <div class="row">
+          <form action="/home/spot/update/id/{$spot.Id}" method="post" class="add-article-form" enctype="multipart/form-data">
+            <div class="col-md-9">
+              <h1 class="page-header">增加景点信息</h1>
+              <div class="form-group">
+                  <h2 class="add-article-box-title"><span>景点名称</span></h2>
+                <label for="article-title" class="sr-only">景点名称</label>
+                <input type="text" id="article-title" name="title" class="form-control" value="{$spot.title}" required autofocus autocomplete="off">
+              </div>
+              <div class="add-article-box">
+                <h2 class="add-article-box-title"><span>景点简介</span></h2>
+                <div class="add-article-box-content">
+                    <input type="text" class="form-control" value="{$spot.introduction}" name="introduction" autocomplete="off">
+                </div>
+              </div>
+              <div class="add-article-box">
+                <h2 class="add-article-box-title"><span>景点描述</span></h2>
+                <div class="add-article-box-content">
+                    <textarea class="form-control"  name="content" autocomplete="off" rows="10">{$spot.content}</textarea>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col-md-3">
+                <h1 class="page-header">操作</h1>
+    
+                <div class="add-article-box">
+                    <h2 class="add-article-box-title"><span>景点图片</span></h2>
+                    <div class="add-article-box-content">
+                        <input type="file" name="photo1" /><br/>
+                        <input type="file" name="photo2" /><br/>
+                        <input type="file" name="photo3" /><br/>
+                        <input type="file" name="photo4" /><br/>
+                        <input type="file" name="photo5" /><br/>
+                    </div>
+                  </div>
+                
+                <div class="add-article-box">
+                  <h2 class="add-article-box-title"><span>发布</span></h2>
+                  <div class="add-article-box-content">
+                      <p><label>状态：</label><span class="article-status-display">未发布</span></p>
+                    <p><label>公开度：</label>公开</p>
+                  </div>
+                  <div class="add-article-box-footer">
+                    <button class="btn btn-primary" type="submit" name="submit">发布</button>
+                  </div>
+                </div>
+    
+             
+    
+    
+            
+    
+            </div>
+          </form>
+        </div>
+      </div>
+    
+     
